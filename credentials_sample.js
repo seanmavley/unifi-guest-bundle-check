@@ -8,4 +8,9 @@ module.exports = {
   password: 'your-unifi-controller-password',
   // debug: true, // More debug of the API (uses the debug module)
   // debugNet: true // Debug of the network requests (uses request module)
+
+  // Your ReCAPTCHA API credentials
+  sitekey: 'something-something',
+  sitesecret: 'duh-duh'
+
 }
