@@ -56,31 +56,43 @@ function calculate_usage(result) {
 router.post('/check-voucher', function(req, res, next) {
   recaptcha.verify(req, function(error) {
     if (!error) {
-      u.list_guests()
-        .then((data) => {
-          // remove the hyphen if any
-          var voucher = req.body.voucher_code.replace(/-/g, "");
-          // console.log(data.data.find(x => x.voucher_code === req.body.voucher));
-          var result = data.data.find(x => x.voucher_code === voucher);
+      u.login(credentials.username, credentials.password)
+        .then(data => {
+          console.log('success', data)
+          u.list_guests()
+            .then((data) => {
+              // remove the hyphen if any
+              var voucher = req.body.voucher_code.replace(/-/g, "");
+              // console.log(data.data.find(x => x.voucher_code === req.body.voucher));
+              var result = data.data.find(x => x.voucher_code === voucher);
 
-          var data = calculate_usage(result);
+              var data = calculate_usage(result);
 
-          res.render('checkvoucher', {
-            'result': true,
-            'voucher_code': req.body.voucher_code,
-            'quota': data.quota,
-            'total_used': data.total_used,
-            'total_left': data.total_left
-          })
+              res.render('checkvoucher', {
+                'result': true,
+                'voucher_code': req.body.voucher_code,
+                'quota': data.quota,
+                'total_used': data.total_used,
+                'total_left': data.total_left
+              })
 
+            })
+            .catch((err) => {
+              console.log('Error', err);
+              res.render('checkvoucher', {
+                'error': err,
+                'captcha': recaptcha.render()
+              });
+            })
         })
-        .catch((err) => {
-          console.log('Error', err);
+        .catch(err => {
+          console.log('Error', err)
           res.render('checkvoucher', {
             'error': err,
             'captcha': recaptcha.render()
           });
         })
+
     } else {
       res.render('checkvoucher', { 'error': error }, {
         'captcha': recaptcha.render()
