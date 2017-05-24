@@ -1,0 +1,51 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+  <div class="container" style="margin-top:20px;" ng-controller="HomeController">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 offset-md-2">
+        <h3>Check your AlwaysOn Bundle</h3>
+        <hr class="my-4">
+
+        {% if not result %}
+        <form method="POST" action="/">
+          <div class="form-group">
+            <label for="voucher_code">Voucher Code</label>
+            <input type="text" class="form-control" id="voucher_code" required aria-describedby="voucher_code" placeholder="e.g 00000-11111" name="voucher_code">
+            <small id="voucher_code" class="form-text text-muted">Enter your voucher code</small>
+          </div>
+          <div class="form-group"
+            {{ captcha }}
+          </div>
+          <div class="form-group">
+          <button type="submit" class="btn btn-primary" role="button">Check</button>
+          </div>
+        </form>
+        {% endif %}
+        {% if result %}
+          <a href="/check-voucher" class="btn btn-primary">Check Again</a> 
+        {% endif %}
+
+        <hr class="my-4">
+        {% if result %}
+        <h4>Results for {{ voucher_code }}:</h4>
+        <div class="lead">
+          <p>Total Bundle: {{ result.qos_usage_quota }} Megabytes (or {{ result.qos_usage_quota / 1000 }} Gb)</p>
+          <p>Total Used: {{ (result.rx_bytes + result.tx_bytes) / 1000000 }} Megabytes</p>
+          <p>Total Left: {{ ((result.qos_usage_quota * 1000000) - (result.rx_bytes + result.tx_bytes))/1000000 }} Megabytes </p>
+        </div>
+        {% endif %}
+        {% if error %}
+        <div class="alert alert-danger" role="alert" ng-if="error">
+          <p>
+            Oops! Something didn't go as planned. See error below, if it makes any sense:
+          </p>
+          <p>
+            {{ error }}
+          </p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

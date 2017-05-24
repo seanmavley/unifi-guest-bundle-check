@@ -14,26 +14,37 @@ var u = unifi({
 
 recaptcha.init(credentials.sitekey, credentials.sitesecret);
 
+router.get('/', function(req, res, next) {
+  res.render('index', {});
+});
+
+router.get('/terms', function(req, res, next) {
+  res.render('terms', {});
+})
+
+router.get('/logged-in', function(req, res, next) {
+  res.render('loggedin', {});
+})
 /*
   Using Native Express with Twig
 */
-router.get('/', function(req, res, next) {
-  res.render('index', {
+router.get('/check-voucher', function(req, res, next) {
+  res.render('checkvoucher', {
     captcha: recaptcha.render()
   })
 });
 
-router.post('/', function(req, res, next) {
+router.post('/check-voucher', function(req, res, next) {
   recaptcha.verify(req, function(error) {
     if (!error) {
       u.list_guests()
         .then((data) => {
           // remove the hyphen if any
-          let voucher = req.body.voucher_code.replace(/-/g, "");
+          var voucher = req.body.voucher_code.replace(/-/g, "");
           // console.log(data.data.find(x => x.voucher_code === req.body.voucher));
-          let result = data.data.find(x => x.voucher_code === voucher);
+          var result = data.data.find(x => x.voucher_code === voucher);
 
-          res.render('index', {
+          res.render('checkvoucher', {
             'voucher_code': req.body.voucher_code,
             'result': result
           })
@@ -41,10 +52,10 @@ router.post('/', function(req, res, next) {
         })
         .catch((err) => {
           console.log('Error', err);
-          res.render('index', { 'error': err });
+          res.render('checkvoucher', { 'error': err });
         })
     } else {
-      res.render('index', { 'error': error })
+      res.render('checkvoucher', { 'error': error })
     }
   })
 
@@ -67,10 +78,10 @@ router.post('/api', function(req, res, next) {
   u.list_guests()
     .then((data) => {
       // remove the hyphen if any
-      let voucher = req.body.voucher.replace(/-/g, "");
+      var voucher = req.body.voucher.replace(/-/g, "");
       // console.log(data.data.find(x => x.voucher_code === req.body.voucher));
       // find a guest with voucher_code
-      let result = data.data.find(x => x.voucher_code === voucher);
+      var result = data.data.find(x => x.voucher_code === voucher);
       res.json({
         'response': result,
         'voucher': voucher

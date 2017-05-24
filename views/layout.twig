@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="unifiguest">
+<html lang="en">
 
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Check your AlwaysOn Data Bundle</title>
-  <!-- Bootstrap CSS -->
+  <title>{% block title %} Override {% endblock %} - It's AlwaysOn</title>
+  <link rel="icon" href="assets/favico.png" sizes="32x32">
+  <!-- Bootstrap -->
+  <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/style.css" rel="stylesheet">
+
   <link rel="stylesheet" type="text/css" href="./vendor/bootstrap/dist/css/bootstrap.min.css">
   <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
-{% block body %}
+{% block content %}
   Override here
 {% endblock %}
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
@@ -22,3 +27,4 @@
 </body>
 
 </html>
+
