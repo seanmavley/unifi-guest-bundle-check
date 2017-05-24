@@ -14,20 +14,22 @@ var u = unifi({
 
 recaptcha.init(credentials.sitekey, credentials.sitesecret);
 
+// Homepage
 router.get('/', function(req, res, next) {
   res.render('index', {});
 });
 
+// Terms
 router.get('/terms', function(req, res, next) {
   res.render('terms', {});
 })
 
+// Page to display after user logged in.
 router.get('/logged-in', function(req, res, next) {
   res.render('loggedin', {});
 })
-/*
-  Using Native Express with Twig
-*/
+
+// Voucher check begins from here.
 router.get('/check-voucher', function(req, res, next) {
   res.render('checkvoucher', {
     captcha: recaptcha.render()
