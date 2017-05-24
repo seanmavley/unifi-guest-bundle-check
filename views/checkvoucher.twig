@@ -30,9 +30,9 @@
         {% if result %}
         <h4>Results for {{ voucher_code }}:</h4>
         <div class="lead">
-          <p>Total Bundle: {{ result.qos_usage_quota }} Megabytes (or {{ result.qos_usage_quota / 1000 }} Gb)</p>
-          <p>Total Used: {{ (result.rx_bytes + result.tx_bytes) / 1000000 }} Megabytes</p>
-          <p>Total Left: {{ ((result.qos_usage_quota * 1000000) - (result.rx_bytes + result.tx_bytes))/1000000 }} Megabytes </p>
+          <p>Total Bundle: <strong>{{ quota }} Megabytes</strong> (or {{ quota / 1000|round(2) }} Gb)</p>
+          <p>Total Used: <strong>{{ total_used|round(2) }} Megabytes</strong></p>
+          <p>Total Left: <strong>{{ total_left|round(2) }} Megabytes</strong></p>
         </div>
         {% endif %}
         {% if error %}
