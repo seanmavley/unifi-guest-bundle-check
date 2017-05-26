@@ -58,14 +58,21 @@ router.post('/check-voucher', function(req, res, next) {
     if (!error) {
       u.list_guests()
         .then((data) => {
-          console.log("Success", data);
+          // console.log("Success", data);
           // remove the hyphen if any
           var voucher = req.body.voucher_code.replace(/-/g, "");
           // console.log(data.data.find(x => x.voucher_code === req.body.voucher));
           var result = data.data.find(x => x.voucher_code === voucher);
 
           var data = calculate_usage(result);
-
+          u.logout()
+            .then((success) => {
+              console.log('Logout Message', success);
+            })
+            .catch((err) => {
+              console.log('Logout Error');
+            })
+          
           res.render('checkvoucher', {
             'result': true,
             'voucher_code': req.body.voucher_code,
