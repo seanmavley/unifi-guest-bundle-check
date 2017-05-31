@@ -8,22 +8,73 @@
   <title>{% block title %} Override {% endblock %} - It's AlwaysOn</title>
   <link rel="icon" href="assets/favico.png" sizes="32x32">
   <!-- Bootstrap -->
-  <link href="./public/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./public/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="./public/assets/style.css" rel="stylesheet">
+  <link href="./vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./vendor/bootstrap/dist/css/bootstrap.min.css">
 
-  <link rel="stylesheet" type="text/css" href="./public/vendor/bootstrap/dist/css/bootstrap.min.css">
-  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <link href="./assets/style.css" rel="stylesheet">
+  {% block extra_head %}
+  {% endblock %}
 </head>
 
 <body>
-{% block content %}
-  Override here
-{% endblock %}
+  <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+      AlwaysOn WiFi
+    </a>
+    <div class="container">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Welcome</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#why">Why AlwaysOn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/coverage">Coverage</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          More
+        </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/faq">FAQs</a>
+              <a class="dropdown-item" href="/terms">Terms</a>
+              <a class="dropdown-item" href="/support">Help & Support</a>
+            </div>
+          </li>
+        </ul>
+        <span class="navbar-text">
+      <a href="/check-voucher" class="btn btn-secondary btn-sm">Check Bundle</a>
+    </span>
+      </div>
+    </div>
+  </nav>
+  {% block slider %}
+    Slider Here
+  {% endblock %}
+<div class="container" style="margin-top:30px;">
+  {% block content %}
+    Override here
+  {% endblock %}
+</div>
+  <footer class="footer" style="margin-top:3rem;">
+    <div class="container">
+      <span class="text-muted">
+      <script type="text/javascript">
+        document.write(new Date().getFullYear());
+      </script> 
+      AlwaysOn WiFi is a project of <a href="http://theafricandream.co" target="new">TheAfricanDream LLC</a>, a US-Based organization.</span>
+    </div>
+  </footer>
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
-  <script src="./public/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="./public/vendor/tether/dist/js/tether.min.js"></script>
-  <script src="./public/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./vendor/jquery/dist/jquery.min.js"></script>
+  <script src="./vendor/tether/dist/js/tether.min.js"></script>
+  <script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

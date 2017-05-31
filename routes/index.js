@@ -24,9 +24,21 @@ router.get('/terms', function(req, res, next) {
   res.render('terms', {});
 })
 
+router.get('/faq', function(req, res, next) {
+  res.render('faq', {});
+})
+
+router.get('/support', function(req, res, next) {
+  res.render('support', {});
+})
+
 // Page to display after user logged in.
 router.get('/logged-in', function(req, res, next) {
   res.render('loggedin', {});
+})
+
+router.get('/coverage', function(req, res, next) {
+  res.render('coverage', {});
 })
 
 // Voucher check begins from here.
@@ -65,6 +77,8 @@ router.post('/check-voucher', function(req, res, next) {
           var result = data.data.find(x => x.voucher_code === voucher);
 
           var data = calculate_usage(result);
+
+          // Explicitly logs out after each transaction.
           u.logout()
             .then((success) => {
               console.log('Logout Message', success);
@@ -72,7 +86,7 @@ router.post('/check-voucher', function(req, res, next) {
             .catch((err) => {
               console.log('Logout Error');
             })
-          
+
           res.render('checkvoucher', {
             'result': true,
             'voucher_code': req.body.voucher_code,

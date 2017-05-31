@@ -1,0 +1,103 @@
+{% extends 'layout.twig' %}
+{% block title %} Frequently Asked Questions {% endblock %}
+{% block content %}
+<div class="col-12">
+      <p class="display-3 text-center">FAQs</p>
+      <div id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          What is AlwaysOn WiFi?
+        </a>
+      </h5>
+          </div>
+          <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+            <div class="card-block">
+              <p>
+                AlwaysOn WiFi is a project by <a href="http://theafricandream.co" target="new">TheAfricanDream LLC</a>, aimed at providing relatively fast affordable WiFi Internet to neighborhoods at parts of Koforidua.
+              </p>
+              <p>
+                With AlwaysOn WiFi, you can surf the web, watch videos online, send and receive emails and chat (text and or voice) at cheaper prices, using Wi-Fi.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Is AlwaysOn WiFi Fast?
+        </a>
+      </h5>
+          </div>
+          <div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="card-block">
+              <p>
+                Yes. For example, AlwaysOn WiFi is fast enough to even watch YouTube videos from 240p to 480p quality without issues or lag.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" role="tab" id="headingThree">
+            <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          I don't get reception at my place. Why?
+        </a>
+      </h5>
+          </div>
+          <div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree">
+            <div class="card-block">
+              <p>
+                AlwaysOn is currently operating at select places. <a href="#contact">Contact us</a> to learn more
+              </p>
+            </div>
+          </div>
+        </div>        
+        <div class="card">
+          <div class="card-header" role="tab" id="headingFour">
+            <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          How do I connect?
+        </a>
+      </h5>
+          </div>
+          <div id="collapseFour" class="collapse show" role="tabpanel" aria-labelledby="headingFour">
+            <div class="card-block">
+              <p>
+                Connect to AlwaysOn using the steps below:
+              </p>
+              <ul>
+                <li>Pick up your smartphone, tablet or laptop within our coverage area, turn on the WiFi on your device, and search for WiFi networks.</li>
+                <li>Connect to the network, "AlwaysOn" Wi-Fi in the list. <small>If you don't find the "AlwaysOn WiFi" in your list of WiFi networks, you're not within coverage of the pilot phase.</small></li>
+                <li>Enter your voucher code in the browser, and start browsing. You may acquire a voucher code from a nearest AlwaysOn Voucher Reseller.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" role="tab" id="headingFive">
+            <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          Can I Download with AlwaysOn WiFi?
+        </a>
+      </h5>
+          </div>
+          <div id="collapseFive" class="collapse show" role="tabpanel" aria-labelledby="headingFive">
+            <div class="card-block">
+              <p>
+                Yes, you can. However, be considerate when, how and what you download. Use of the AlwaysOn WiFi in breach of the <a href="/terms">Terms of Use</a> will mean a temporal or permanent ban from the WiFi Service.
+              </p>
+              <p>
+                In order to ensure a fast reliable connection for all users, we recommend you do heavy downloads (200Mb or more file sizes) during the night, as less users are on the network, and the download will be relatively faster.
+              </p>
+              <p>
+                For very big file sizes, we encourage you to contact AlwaysOn WiFi Administrators, and we'll be happy to do an off-the-WiFi download for you for free, after considering your request, content to download, and if such content meets our ToS.
+              </p>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+{% endblock %}
