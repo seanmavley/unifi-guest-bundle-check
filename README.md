@@ -8,9 +8,11 @@ A way for my Unifi WiFi Hotspot users to check the balance left on their voucher
 
 Here's how it looks in the browser:
 
-[Screenshot 1 - Voucher Stats Display](http://i.imgur.com/zcY02bb.png)
+Voucher Stats Display
+![Screenshot 1 - Voucher Stats Display](http://i.imgur.com/zcY02bb.png)
 
-[Screenshot 2 - Voucher Check Form](http://i.imgur.com/YKzLWiC.png)
+Voucher Check Form
+![Screenshot 2 - Voucher Check Form](http://i.imgur.com/YKzLWiC.png)
 
 ## Why
 
