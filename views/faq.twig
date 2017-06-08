@@ -1,18 +1,31 @@
 {% extends 'layout.twig' %}
 {% block title %} Frequently Asked Questions {% endblock %}
 {% block content %}
-<div class="col-12">
+<div class="col-sm-12 col-md-5">
+  <div class="list-group">
+    <span class="list-group-item">
+      Table of Contents
+    </span>
+    <a href="#what-is-alwayson" class="list-group-item list-group-item-action">What is AlwaysOn WiFi?</a>
+    <a href="#is-alwayson-fast" class="list-group-item list-group-item-action">Is AlwaysOn Fast?</a>
+    <a href="#no-reception" class="list-group-item list-group-item-action">I don't get reception at my place. Why?</a>
+    <a href="#how-to-connect" class="list-group-item list-group-item-action">How to Connect</a>
+    <a href="#downloads-alwayson" class="list-group-item list-group-item-action">Can I download with AlwaysOn?</a>
+    <a href="#browser-support" class="list-group-item list-group-item-action">I Can't open Login Page. Is it the browser?</a>
+  </div>
+</div>
+<div class="col-sm-12 col-md-7">
       <p class="display-3 text-center">FAQs</p>
       <div id="accordion" role="tablist" aria-multiselectable="true">
         <div class="card">
           <div class="card-header" role="tab" id="headingOne">
             <h5 class="mb-0">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <a data-toggle="collapse" data-parent="#accordion" href="#what-is-alwayson" aria-expanded="true" aria-controls="what-is-alwayson">
           What is AlwaysOn WiFi?
         </a>
       </h5>
           </div>
-          <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+          <div id="what-is-alwayson" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
             <div class="card-block">
               <p>
                 AlwaysOn WiFi is a project by <a href="http://theafricandream.co" target="new">TheAfricanDream LLC</a>, aimed at providing relatively fast affordable WiFi Internet to neighborhoods at parts of Koforidua.
@@ -26,12 +39,12 @@
         <div class="card">
           <div class="card-header" role="tab" id="headingTwo">
             <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#is-alwayson-fast" aria-expanded="false" aria-controls="is-alwayson-fast">
           Is AlwaysOn WiFi Fast?
         </a>
       </h5>
           </div>
-          <div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
+          <div id="is-alwayson-fast" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
             <div class="card-block">
               <p>
                 Yes. For example, AlwaysOn WiFi is fast enough to even watch YouTube videos from 240p to 480p quality without issues or lag.
@@ -42,12 +55,12 @@
         <div class="card">
           <div class="card-header" role="tab" id="headingThree">
             <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#no-reception" aria-expanded="false" aria-controls="no-reception">
           I don't get reception at my place. Why?
         </a>
       </h5>
           </div>
-          <div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree">
+          <div id="no-reception" class="collapse show" role="tabpanel" aria-labelledby="headingThree">
             <div class="card-block">
               <p>
                 AlwaysOn is currently operating at select places. <a href="#contact">Contact us</a> to learn more
@@ -58,12 +71,12 @@
         <div class="card">
           <div class="card-header" role="tab" id="headingFour">
             <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#how-to-connect" aria-expanded="false" aria-controls="how-to-connect">
           How do I connect?
         </a>
       </h5>
           </div>
-          <div id="collapseFour" class="collapse show" role="tabpanel" aria-labelledby="headingFour">
+          <div id="how-to-connect" class="collapse show" role="tabpanel" aria-labelledby="headingFour">
             <div class="card-block">
               <p>
                 Connect to AlwaysOn using the steps below:
@@ -79,12 +92,12 @@
         <div class="card">
           <div class="card-header" role="tab" id="headingFive">
             <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#downloads-alwayson" aria-expanded="false" aria-controls="downloads-alwayson">
           Can I Download with AlwaysOn WiFi?
         </a>
       </h5>
           </div>
-          <div id="collapseFive" class="collapse show" role="tabpanel" aria-labelledby="headingFive">
+          <div id="downloads-alwayson" class="collapse show" role="tabpanel" aria-labelledby="headingFive">
             <div class="card-block">
               <p>
                 Yes, you can. However, be considerate when, how and what you download. Use of the AlwaysOn WiFi in breach of the <a href="/terms">Terms of Use</a> will mean a temporal or permanent ban from the WiFi Service.
@@ -94,6 +107,33 @@
               </p>
               <p>
                 For very big file sizes, we encourage you to contact AlwaysOn WiFi Administrators, and we'll be happy to do an off-the-WiFi download for you for free, after considering your request, content to download, and if such content meets our ToS.
+              </p>
+            </div>
+          </div>
+        </div>         
+        <div class="card">
+          <div class="card-header" role="tab" id="headingFive">
+            <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#browser-support" aria-expanded="false" aria-controls="browser-support">
+          Can't open Login Page. Is it the browser?
+        </a>
+      </h5>
+          </div>
+          <div id="browser-support" class="collapse show" role="tabpanel" aria-labelledby="headingFive">
+            <div class="card-block">
+              <p>
+                One of the common issues faced by new users is the inability to open the AlwaysOn WiFi login page to enter the voucher code.
+              </p>
+              <p>
+                Here are steps we suggest to fix it, and they do not follow in any particular order:
+                <ul>
+                  <li>Upgrade your operating system</li>
+                  <li>Use either Firefox, Chrome, Opera or UC Browser</li>
+                  <li>Update your Firefox, Chrome, Opera or UC Browser to a recent version</li>
+                </ul>
+              </p>
+              <p>
+                NOTE: The AlwaysOn WiFi Login Page <bold>does not work</bold> on the Internet Explorer browser. We highly recommend any of the steps above.
               </p>
             </div>
           </div>
