@@ -1,20 +1,22 @@
 {% extends 'layout.twig' %}
 {% block title %} Frequently Asked Questions {% endblock %}
 {% block content %}
-<div class="col-sm-12 col-md-5">
-  <div class="list-group">
-    <span class="list-group-item">
-      Table of Contents
-    </span>
-    <a href="#what-is-alwayson" class="list-group-item list-group-item-action">What is AlwaysOn WiFi?</a>
-    <a href="#is-alwayson-fast" class="list-group-item list-group-item-action">Is AlwaysOn Fast?</a>
-    <a href="#no-reception" class="list-group-item list-group-item-action">I don't get reception at my place. Why?</a>
-    <a href="#how-to-connect" class="list-group-item list-group-item-action">How to Connect</a>
-    <a href="#downloads-alwayson" class="list-group-item list-group-item-action">Can I download with AlwaysOn?</a>
-    <a href="#browser-support" class="list-group-item list-group-item-action">I Can't open Login Page. Is it the browser?</a>
+<div class="row">
+  <div class="col-sm-12 col-md-5">
+    <div class="list-group">
+      <span class="list-group-item">
+        Table of Contents
+      </span>
+      <a href="#what-is-alwayson" class="list-group-item list-group-item-action">What is AlwaysOn WiFi?</a>
+      <a href="#is-alwayson-fast" class="list-group-item list-group-item-action">Is AlwaysOn Fast?</a>
+      <a href="#no-reception" class="list-group-item list-group-item-action">I don't get reception at my place. Why?</a>
+      <a href="#how-to-connect" class="list-group-item list-group-item-action">How to Connect</a>
+      <a href="#downloads-alwayson" class="list-group-item list-group-item-action">Can I download with AlwaysOn?</a>
+      <a href="#browser-support" class="list-group-item list-group-item-action">I Can't open Login Page. Is it the browser?</a>
+      <a href="#browsing-speed" class="list-group-item list-group-item-action">When can I get fastest browsing speeds?</a>
+    </div>
   </div>
-</div>
-<div class="col-sm-12 col-md-7">
+  <div class="col-sm-12 col-md-7">
       <p class="display-3 text-center">FAQs</p>
       <div id="accordion" role="tablist" aria-multiselectable="true">
         <div class="card">
@@ -137,7 +139,31 @@
               </p>
             </div>
           </div>
+        </div> 
+        <div class="card">
+          <div class="card-header" role="tab" id="headingFive">
+            <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#browsing-speed" aria-expanded="false" aria-controls="browsing-speed">
+          When can I get fastest browsing speeds? 
+        </a>
+      </h5>
+          </div>
+          <div id="browsing-speed" class="collapse show" role="tabpanel" aria-labelledby="headingFive">
+            <div class="card-block">
+              <p>
+                Off-peak times are the best times to get the fastest speeds. During peak hours such as from late evening to early night, more users are on the WiFi and the internet service provider at large, thus the internet speeds might degrade.
+              </p>
+              <p>
+                To enjoy relatively faster browsing speeds, try using AlwaysOn WiFi at the suggested times below:
+                <ul>
+                  <li>Weekdays: 11 pm to 10 am</li>
+                  <li>Weekends: During the day, internet speeds tend to be fast, compared to the mornings and evenings.</li>
+                </ul>
+              </p>
+            </div>
+          </div>
         </div>        
       </div>
     </div>
+  </div>
 {% endblock %}
