@@ -81,7 +81,7 @@ router.post('/check-voucher', function(req, res, next) {
           // Explicitly logs out after each transaction.
           u.logout()
             .then((success) => {
-              console.log('Logout Message', success);
+              console.log('Logout Message');
             })
             .catch((err) => {
               console.log('Logout Error');
