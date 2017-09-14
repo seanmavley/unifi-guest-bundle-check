@@ -11,8 +11,11 @@
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "express-recaptcha": "^2.1.0",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
     "morgan": "~1.8.1",
     "node-unifiapi": "0.0.45",
+    "paystack": "^1.4.1",
     "serve-favicon": "~2.4.2",
     "twig": "~0.10.3"
   }

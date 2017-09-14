@@ -5,13 +5,6 @@ var recaptcha = require('express-recaptcha');
 
 var credentials = require('../credentials');
 
-// Check the credentials_sample
-var u = unifi({
-  baseUrl: credentials.baseUrl, // The URL of the Unifi Controller
-  username: credentials.username,
-  password: credentials.password,
-});
-
 recaptcha.init(credentials.sitekey, credentials.sitesecret);
 
 // Homepage
@@ -55,7 +48,11 @@ function calculate_usage(result) {
     Convert all values to Megabyte
     1 Megabyte = 1000000 (a million) bytes
   */
-  var total_used = (result.rx_bytes + result.tx_bytes) / 1000000
+  console.log(result.bytes);
+  console.log(result.rx_bytes);
+  console.log(result.tx_bytes);
+  console.log(result.qos_usage_quota);
+  var total_used = (result.rx_bytes + result.tx_bytes) / 1000000;
   var total_left = result.qos_usage_quota - total_used;
 
   return {
@@ -65,12 +62,18 @@ function calculate_usage(result) {
   }
 }
 
+// Check the credentials_sample
+var u = unifi({
+  baseUrl: credentials.baseUrl, // The URL of the Unifi Controller
+  username: credentials.username, // Your username
+  password: credentials.password, // Your password
+});
+
 router.post('/check-voucher', function(req, res, next) {
   recaptcha.verify(req, function(error) {
     if (!error) {
       u.list_guests()
         .then((data) => {
-          // console.log("Success", data);
           // remove the hyphen if any
           var voucher = req.body.voucher_code.replace(/-/g, "");
           // console.log(data.data.find(x => x.voucher_code === req.body.voucher));
@@ -111,51 +114,6 @@ router.post('/check-voucher', function(req, res, next) {
     }
   })
 
-})
-
-/*
-  The API version, if using Angular or React
-  in the Frontend
-*/
-router.get('/api', function(req, res, next) {
-  res.json({
-    message: 'Welcome to AlwaysOn Bundle Check Page.',
-    help: 'To check your AlwaysOn Data Bundle stats, send an API POST method to "/",\
-    including the parameter, "voucher_code"\
-    So, something like: { "voucher_code": 00000-11111 }'
-  })
-});
-
-router.post('/api', function(req, res, next) {
-  if (!req.body.voucher_code) {
-    res.json({
-      'Error': 'No "voucher_code"',
-      'message': 'You did not send the voucher_code param'
-    })
-  } else {
-    u.list_guests()
-      .then((data) => {
-        // remove the hyphen if any
-        var voucher = req.body.voucher_code.replace(/-/g, "");
-
-        var result = data.data.find(x => x.voucher_code === voucher);
-
-        var data = calculate_usage(result);
-
-        res.json({
-          'voucher_code': req.body.voucher_code,
-          'quota': data.quota,
-          'total_used': data.total_used,
-          'total_left': data.total_left
-        });
-      })
-      .catch((err) => {
-        console.log('Error', err);
-        res.json({
-          'Error': err
-        })
-      })
-  }
 })
 
 module.exports = router;

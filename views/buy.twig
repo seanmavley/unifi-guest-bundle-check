@@ -1,0 +1,23 @@
+{% extends 'layout.twig' %} {% block title %} Buy Bundle {% endblock %} {% block content %}
+<div class="row">
+    <div class="col-sm-12 col-md-8 offset-md-2 ">
+        <h3 class="text-center">Purchase AlwaysOn Bundle</h3>
+        <hr>
+        <form action="." method="POST">
+            <div class="form-group">
+                <label for="payBundle" class="lead">Select bundle</label>
+                <select class="form-control form-control-lg" id="payBundle">
+                    <option value="30">30 Cedis - 10 Gig - 30 Days</option>
+                    <option value="10">10 Cedis - 3 Gig - 30 Days</option>
+                    <option value="5">5 Cedis - 1 Gig - 30 Days</option>
+                    <option value="2">2 Cedis - 300 Mb - 3 Days</option>
+                    <option value="1">1 Cedis - 100 Mb - 3 Days</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="submit" role="button" class="btn btn-lg btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
