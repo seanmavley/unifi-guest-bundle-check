@@ -62,14 +62,16 @@ function calculate_usage(result) {
   }
 }
 
-// Check the credentials_sample
-var u = unifi({
-  baseUrl: credentials.baseUrl, // The URL of the Unifi Controller
-  username: credentials.username, // Your username
-  password: credentials.password, // Your password
-});
 
 router.post('/check-voucher', function(req, res, next) {
+  // Check the credentials_sample
+  var u = unifi({
+    baseUrl: credentials.baseUrl, // The URL of the Unifi Controller
+    username: credentials.username, // Your username
+    password: credentials.password, // Your password
+    debug: true
+  });
+  
   recaptcha.verify(req, function(error) {
     if (!error) {
       u.list_guests()
@@ -82,13 +84,13 @@ router.post('/check-voucher', function(req, res, next) {
           var data = calculate_usage(result);
 
           // Explicitly logs out after each transaction.
-          u.logout()
-            .then((success) => {
-              console.log('Logout Message');
-            })
-            .catch((err) => {
-              console.log('Logout Error');
-            })
+          // u.logout()
+          //   .then((success) => {
+          //     console.log('Logout Message');
+          //   })
+          //   .catch((err) => {
+          //     console.log('Logout Error');
+          //   })
 
           res.render('checkvoucher', {
             'result': true,
