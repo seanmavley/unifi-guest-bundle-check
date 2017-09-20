@@ -69,9 +69,9 @@ router.post('/check-voucher', function(req, res, next) {
     baseUrl: credentials.baseUrl, // The URL of the Unifi Controller
     username: credentials.username, // Your username
     password: credentials.password, // Your password
-    debug: true
+    // debug: true
   });
-  
+
   recaptcha.verify(req, function(error) {
     if (!error) {
       u.list_guests()
@@ -82,15 +82,6 @@ router.post('/check-voucher', function(req, res, next) {
           var result = data.data.find(x => x.voucher_code === voucher);
 
           var data = calculate_usage(result);
-
-          // Explicitly logs out after each transaction.
-          // u.logout()
-          //   .then((success) => {
-          //     console.log('Logout Message');
-          //   })
-          //   .catch((err) => {
-          //     console.log('Logout Error');
-          //   })
 
           res.render('checkvoucher', {
             'result': true,
