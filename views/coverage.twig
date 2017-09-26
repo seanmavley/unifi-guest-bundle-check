@@ -1,17 +1,23 @@
-{% extends 'layout.twig' %}
-{% block title %} Coverage {% endblock %}
-{% block content %}
-   <hr class="my-4">
-    <p class="text-center display-3">
-      Stay connected via WiFi, that stays 'Always On'.
-    </p>
-    <hr class="my-4">
-    <div class="row justify-content-md-center">
-    <p class="lead">
-      Coverage map coming soon.
-    </p>
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item col-sm-12" src="https://www.google.com/maps/d/u/0/embed?mid=1cFe7UqIgEh5vgNbi3oKirP0ZiUE" allowfullscreen></iframe>
-      </div>
+{% extends 'layout.twig' %} {% block title %} Coverage {% endblock %} {% block content %}
+<div class="container mt-5">
+    <div class="row ">
+      <div class="col text-center">
+        <h1>
+            Stay connected via WiFi, that stays 'Always On'.
+        </h1>
+          <p class="lead">Our current coverage map, and expanding. Want your area to be the next?</p>
+          <a href="/support" class="btn btn-primary btn-lg">Contact Us</a>
+        </div>
     </div>
+</div>
+<hr class="my-4">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item col-sm-12" src="https://www.google.com/maps/d/u/0/embed?mid=1cFe7UqIgEh5vgNbi3oKirP0ZiUE" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
