@@ -17,6 +17,10 @@ router.get('/terms', function(req, res, next) {
   res.render('terms', {});
 })
 
+router.get('/privacy', function(req, res, next) {
+  res.render('privacy', {});
+})
+
 router.get('/for-home', function(req, res, next) {
   res.render('home', {});
 })
