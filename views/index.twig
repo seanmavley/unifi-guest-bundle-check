@@ -1,192 +1,111 @@
-{% extends 'layout.twig' %}
-{% block title %} Welcome {% endblock %}
-{% block slider %}
-  <div class="container-fluid" style="margin-top: 55px; margin-bottom:20px; padding: 0px;">
-    <div id="introCarousel" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#introCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#introCarousel" data-slide-to="1"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
+{% extends 'layout.twig' %} {% block title %} Welcome to AlwaysOn WiFi {% endblock %} {% block slider %}
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block img-fluid" src="public/assets/slide1.jpg" alt="First slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>Connect everything</h3>
-            <p>It's Wi-Fi, and all your devices are invited to the party. Connect and start browsing!</p>
-          </div>
+            <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+            <div class="container">
+                <div class="carousel-caption text-left">
+                    <h1>Example headline.</h1>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                </div>
+            </div>
         </div>
         <div class="carousel-item">
-          <img class="d-block img-fluid" src="public/assets/slide2.jpg" alt="Second slide">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>Productivity Everywhere</h3>
-            <p>With prices tailored to your pocket, productivity doesn't leave your side, even the home.</p>
-          </div>
+            <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Another example headline.</h1>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                </div>
+            </div>
         </div>
-      </div>
-      <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+        <div class="carousel-item">
+            <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+            <div class="container">
+                <div class="carousel-caption text-right">
+                    <h1>One more for good measure.</h1>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+</div>
+{% endblock %} {% block content %}
+<!-- Wrap the rest of the page in another container to center all the content. -->
+<div class="container marketing">
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <h2>Heading</h2>
+            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+    <!-- /.row -->
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <!-- /END THE FEATURETTES -->
+</div>
 {% endblock %}
-{% block content %}
-    <section id="why">
-      <h1 class="display-3 text-center">It's AlwaysOn!</h1>
-      <p class="lead text-center">AlwaysOn is the new Wide Area WiFi Hotspot solution close to you in Koforidua - just the type you can afford.</p>
-      <hr class="my-4">
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-4">
-          <p class="text-center">
-            <i class="fa fa-fighter-jet fa-5x"></i>
-          </p>
-          <p class="lead text-center">Speed & Security</p>
-          <p>With focus on speed and security, AlwaysOn keeps your WiFi Internet, well, 'Always On'. Keep enjoying the web without interruptions.</p>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <p class="text-center">
-            <i class="fa fa-wifi fa-5x"></i>
-          </p>
-          <p class="lead text-center">Wide Coverage</p>
-          <p>AlwaysOn WiFi strives to cover large neighborhoods, a way to get you connected on all your devices, all the time seamlessly. </p>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <p class="text-center">
-            <i class="fa fa-money fa-5x"></i>
-          </p>
-          <p class="lead text-center">Right Prices for All</p>
-          <p>AlwaysOn WiFi Data Bundles are rigged at just the right prices to beat your current data bundles, yet easy on your pocket.</p>
-        </div>
-      </div>
-      <div class="text-center" style="margin-top:1.8rem;">
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#bundles" role="button">See bundles</a>
-        </p>
-      </div>
-    </section>
-  <hr class="my-3">
-    <div class="row">
-      <div class="col-12">
-      </div>
-      <div class="col-sm-12 col-md-3 col-lg-5">
-        <img src="public/assets/hotspot.png" class="img-fluid">
-      </div>
-      <div class="col-sm-12 col-md-9 col-lg-7">
-        <p class="display-3">
-          Welcome to AlwaysOn
-        </p>
-        <h3>
-          Stay connected via WiFi, that stays 'Always On'.
-        </h3>
-        <p class="lead">
-          It is time to change the way you access the Internet. Convert your AirTime to Data now, and get fast Internet access over a wide coverage area.
-        </p>
-      </div>
-    </div>
-    <hr class="my-4">
-    <div class="row">
-      <div class="col-sm-12 col-md-9 col-lg-7">
-        <p class="display-3">
-          Near You*
-        </p>
-        <h3>
-          Enjoy WiFi Internet access from AlwaysOn, just where you are.
-        </h3>
-        <p class="lead">
-          AlwaysOn WiFi is constantly looking for opportunities to expand. We will be happy to bring AlwaysOn closer to you. Just get in touch.
-        </p>
-      </div>
-      <div class="col-sm-12 col-md-3 col-lg-5 hidden-sm-down">
-        <img src="public/assets/coverage.jpg" class="img-fluid">
-      </div>
-    </div>
-    <hr class="my-4">
-    <div class="row">
-      <div class="col-sm-12 col-md-3 col-lg-5 hidden-sm-down">
-        <img src="public/assets/prices.jpg" class="img-fluid">
-      </div>
-      <div class="col-sm-12 col-md-9 col-lg-7">
-        <p class="display-3">
-          At M-mm-uah! Prices
-        </p>
-        <h3>
-          Prices that beats everything you know, in WiFi.
-        </h3>
-        <p class="lead">
-          Starting at 1 Cedis for 100 Mb, AlwaysOn WiFi are priced just the way you want. Are you an Internet heavy user? Want a package for watching videos? AlwaysOn WiFi matches all the prices you can think of for your all-round needs.
-        </p>
-      </div>
-    </div>
-  <hr class="my-4">
-    <div class="col-12">
-      <p class="display-3 text-center" id="bundles">Bundles & Prices</p>
-      <table class="table table-striped table-hover">
-        <thead class="thead-inverse">
-          <tr>
-            <th>Bundle Name</th>
-            <th>Duration (Days)</th>
-            <th>Data Cap (Gig)</th>
-            <th>Price (Cedis)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Mini Lite</th>
-            <td>3</td>
-            <td>0.1 (100 Mb)</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <th scope="row">Mini Heavy</th>
-            <td>3</td>
-            <td>0.3 (300 Mb)</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <th scope="row">Monthly Lite</th>
-            <td>30</td>
-            <td>1</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <th scope="row">Monthly Heavy</th>
-            <td>30</td>
-            <td>3</td>
-            <td>10</td>
-          </tr>
-          <tr>
-            <th scope="row">Monthly Xtreme</th>
-            <td>30</td>
-            <td>10</td>
-            <td>30</td>
-          </tr>
-          <tr>
-            <th scope="row">Custom Monthly Bundle</th>
-            <td>Contact Alwayson</td>
-            <td colspan="2">+233.26.920.1707 or alwayson@khophi.co</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <section>
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <p class="lead text-center">Where to Buy?</p>
-          <p>
-            Buy your AlwaysOn WiFi bundle at <em>Ben Yehowah Shop</em> near the Densuano Clinic, or find the a reseller close to you. <a href="/support">Contact us today</a>
-          </p>
-        </div>
-        <div class="col-12 col-md-6">
-          <p class="lead text-center">Resellers</p>
-          <p>
-            Resellers earn a percentage on each voucher sold. Want to be an AlwaysOn WiFi Internet Bundler Voucher reseller? <a href="/support">Contact us.</a> 
-          </p>
-        </div>
-      </div>
-    </section>
-
-  {% endblock %}
