@@ -1,215 +1,157 @@
-{% extends 'layout.twig' %}
-{% block title %} Frequently Asked Questions {% endblock %}
-{% block content %}
-<div class="row">
-  <div class="col-sm-12 col-md-5">
-    <div class="list-group">
-      <span class="list-group-item">
+{% extends 'layout.twig' %} {% block title %} Frequently Asked Questions {% endblock %} {% block content %}
+<div class="container mt-5" id="top">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 mx-auto">
+            <div class="list-group">
+                <span class="list-group-item">
         Table of Contents
       </span>
-      <a href="#what-is-alwayson" class="list-group-item list-group-item-action">What is AlwaysOn WiFi?</a>
-      <a href="#is-alwayson-fast" class="list-group-item list-group-item-action">Is AlwaysOn Fast?</a>
-      <a href="#no-reception" class="list-group-item list-group-item-action">I don't get reception at my place. Why?</a>
-      <a href="#how-to-connect" class="list-group-item list-group-item-action">How to Connect</a>
-      <a href="#downloads-alwayson" class="list-group-item list-group-item-action">Can I download with AlwaysOn?</a>
-      <a href="#browser-support" class="list-group-item list-group-item-action">I Can't open Login Page. Is it the browser?</a>
-      <a href="#browsing-speed" class="list-group-item list-group-item-action">When can I get fastest browsing speeds?</a>      
-      <a href="#youtube-videos" class="list-group-item list-group-item-action">My YouTube videos keep loading. Why?</a>
-      <a href="#health" class="list-group-item list-group-item-action">Wi-Fi: are there any health risks?</a>
+                <a href="#what-is-alwayson" class="list-group-item list-group-item-action">What is AlwaysOn WiFi?</a>
+                <a href="#is-alwayson-fast" class="list-group-item list-group-item-action">Is AlwaysOn Fast?</a>
+                <a href="#no-reception" class="list-group-item list-group-item-action">I don't get reception at my place. Why?</a>
+                <a href="#how-to-connect" class="list-group-item list-group-item-action">How to Connect</a>
+                <a href="#downloads-alwayson" class="list-group-item list-group-item-action">Can I download with AlwaysOn?</a>
+                <a href="#browser-support" class="list-group-item list-group-item-action">I Can't open Login Page. Is it the browser?</a>
+                <a href="#browsing-speed" class="list-group-item list-group-item-action">When can I get fastest browsing speeds?</a>
+                <a href="#youtube-videos" class="list-group-item list-group-item-action">My YouTube videos keep loading. Why?</a>
+                <a href="#health" class="list-group-item list-group-item-action">Wi-Fi: are there any health risks?</a>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <div class="col-sm-12 col-md-10 mx-auto">
+            <p class="display-3 text-center">FAQs</p>
+            <div class="card" id="what-is-alwayson">
+                <div class="card-header">What is AlwaysOn WiFi?  <a href="#top" class="float-right">top</a></div>
+                <div class="card-body">
+                    <p>
+                        AlwaysOn WiFi is a project by <a href="http://theafricandream.co" target="new">TheAfricanDream LLC</a>, aimed at providing relatively fast affordable WiFi Internet to neighborhoods at parts of Koforidua.
+                    </p>
+                    <p>
+                        With AlwaysOn WiFi, you can surf the web, watch videos online, send and receive emails and chat (text and or voice) at cheaper prices, using Wi-Fi.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Is AlwaysOn WiFi Fast? <a href="#top" class="float-right">top</a>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Yes. For example, AlwaysOn WiFi is fast enough to even watch YouTube videos from 480p to 1080p quality without buffer or lag.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    I don't get reception at my place. Why?  <a href="#top" class="float-right">top</a>
+                </div>
+                <div class="card-body">
+                    <p>
+                        AlwaysOn is currently operating at select places. <a href="/support">Contact us</a> to learn more
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    How do I connect?  <a href="#top" class="float-right">top</a>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Connect to AlwaysOn using the steps below:
+                    </p>
+                    <ul>
+                        <li>Pick up your smartphone, tablet or laptop within our coverage area, turn on the WiFi on your device, and search for WiFi networks.</li>
+                        <li>Connect to the network, "AlwaysOn" Wi-Fi in the list. <small>If you don't find the "AlwaysOn WiFi" in your list of WiFi networks, you're not within coverage of the pilot phase.</small></li>
+                        <li>Enter your voucher code in the browser, and start browsing. You may acquire a voucher code from a nearest AlwaysOn Voucher Reseller.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Can I Download with AlwaysOn WiFi?  <a href="#top" class="float-right">top</a>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Yes, you can. However, be considerate when, how and what you download. Use of the AlwaysOn WiFi in breach of the <a href="/terms">Terms of Use</a> will mean a temporal or permanent ban from the WiFi Service.
+                    </p>
+                    <p>
+                        In order to ensure a fast reliable connection for all users, we recommend you do heavy downloads (200Mb or more file sizes) during the night, as less users are on the network, and the download will be relatively faster.
+                    </p>
+                    <p>
+                        For very big file sizes, we encourage you to contact AlwaysOn WiFi Administrators, and we'll be happy to do an off-the-WiFi download for you for free, after considering your request, content to download, and if such content meets our ToS.
+                    </p>
+                </div>
+            </div>
+            <div class="card" id="browser-support">
+                <div class="card-header">
+                    Can't open Login Page. Is it the browser?  <a href="#top" class="float-right">top</a>
+                </div>
+                    <div class="card-body">
+                        <p>
+                            One of the common issues faced by new users is the inability to open the AlwaysOn WiFi login page to enter the voucher code.
+                        </p>
+                        <p>
+                            Here are steps we suggest to fix it, and they do not follow in any particular order:
+                            <ul>
+                                <li>Upgrade your operating system</li>
+                                <li>Use either Firefox, Chrome, Opera or UC Browser</li>
+                                <li>Update your Firefox, Chrome, Opera or UC Browser to a recent version</li>
+                            </ul>
+                        </p>
+                        <p>
+                            NOTE: The AlwaysOn WiFi Login Page
+                            <bold>does not work</bold> on the Internet Explorer browser. We highly recommend any of the steps above.
+                        </p>
+                    </div>
+            </div>
+            <div class="card" id="browsing-speed">
+                <div class="card-header">
+                    When can I get fastest browsing speeds?  <a href="#top" class="float-right">top</a>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Off-peak times are the best times to get the fastest speeds. During peak hours such as from late evening to early night, more users are on the WiFi and the internet service provider at large, thus the internet speeds might degrade.
+                    </p>
+                    <p>
+                        To enjoy relatively faster browsing speeds, try using AlwaysOn WiFi at the suggested times below:
+                        <ul>
+                            <li>Weekdays: 11 pm to 10 am</li>
+                            <li>Weekends: During the day, internet speeds tend to be fast, compared to the mornings and evenings.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="card" id="youtube-videos">
+                <div class="card-header">
+                    My YouTube videos keep loading. Why?  <a href="#top" class="float-right">top</a>
+                </div>
+                <div class="card-body">
+                    <p>
+                        YouTube videos support from 144p video quality up to 8K. When you select a specific video quality, YouTube tries to stick to it for all your videos. However, the higher the video quality, the more likely it might be the network speed cannot stream such a quality at that point in time.
+                    </p>
+                    <p>
+                        Therefore, we strongly recommend to set your YouTube player to automatically detect your network and stream the related video quality for you. As the video starts playing, even if in low quality, YouTube will automatically adjust to higher quality during the video.
+                    </p>
+                    <p>
+                        To set your YouTube video to "Auto", please follow this tutorial on <a href="https://support.google.com/youtube/answer/91449?hl=en" target="new">YouTube Support</a>
+                    </p>
+                </div>
+            </div>
+            <div class="card" id="health">
+                <div class="card-header">
+                    What are the Health Risk of WiFi?  <a href="#top" class="float-right">top</a>
+                </div>
+                <div class="card-body">
+                    <p>
+                        There is none! No research into the effects of WiFi have proven WiFi poses any harmful risk to our health.
+                    </p>
+                    <p>
+                        Read more about the subject in this article, <a href="https://www.theguardian.com/technology/askjack/2012/sep/27/wi-fi-health-risks" target="new">Wi-Fi: are there any health risks?"</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="col-sm-12 col-md-7">
-      <p class="display-3 text-center">FAQs</p>
-      <div id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="card">
-          <div class="card-header" role="tab" id="headingOne">
-            <h5 class="mb-0">
-        <a data-toggle="collapse" data-parent="#accordion" href="#what-is-alwayson" aria-expanded="true" aria-controls="what-is-alwayson">
-          What is AlwaysOn WiFi?
-        </a>
-      </h5>
-          </div>
-          <div id="what-is-alwayson" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-            <div class="card-block">
-              <p>
-                AlwaysOn WiFi is a project by <a href="http://theafricandream.co" target="new">TheAfricanDream LLC</a>, aimed at providing relatively fast affordable WiFi Internet to neighborhoods at parts of Koforidua.
-              </p>
-              <p>
-                With AlwaysOn WiFi, you can surf the web, watch videos online, send and receive emails and chat (text and or voice) at cheaper prices, using Wi-Fi.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" role="tab" id="headingTwo">
-            <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#is-alwayson-fast" aria-expanded="false" aria-controls="is-alwayson-fast">
-          Is AlwaysOn WiFi Fast?
-        </a>
-      </h5>
-          </div>
-          <div id="is-alwayson-fast" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
-            <div class="card-block">
-              <p>
-                Yes. For example, AlwaysOn WiFi is fast enough to even watch YouTube videos from 240p to 480p quality without issues or lag.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" role="tab" id="headingThree">
-            <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#no-reception" aria-expanded="false" aria-controls="no-reception">
-          I don't get reception at my place. Why?
-        </a>
-      </h5>
-          </div>
-          <div id="no-reception" class="collapse show" role="tabpanel" aria-labelledby="headingThree">
-            <div class="card-block">
-              <p>
-                AlwaysOn is currently operating at select places. <a href="#contact">Contact us</a> to learn more
-              </p>
-            </div>
-          </div>
-        </div>        
-        <div class="card">
-          <div class="card-header" role="tab" id="headingFour">
-            <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#how-to-connect" aria-expanded="false" aria-controls="how-to-connect">
-          How do I connect?
-        </a>
-      </h5>
-          </div>
-          <div id="how-to-connect" class="collapse show" role="tabpanel" aria-labelledby="headingFour">
-            <div class="card-block">
-              <p>
-                Connect to AlwaysOn using the steps below:
-              </p>
-              <ul>
-                <li>Pick up your smartphone, tablet or laptop within our coverage area, turn on the WiFi on your device, and search for WiFi networks.</li>
-                <li>Connect to the network, "AlwaysOn" Wi-Fi in the list. <small>If you don't find the "AlwaysOn WiFi" in your list of WiFi networks, you're not within coverage of the pilot phase.</small></li>
-                <li>Enter your voucher code in the browser, and start browsing. You may acquire a voucher code from a nearest AlwaysOn Voucher Reseller.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" role="tab" id="headingFive">
-            <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#downloads-alwayson" aria-expanded="false" aria-controls="downloads-alwayson">
-          Can I Download with AlwaysOn WiFi?
-        </a>
-      </h5>
-          </div>
-          <div id="downloads-alwayson" class="collapse show" role="tabpanel" aria-labelledby="headingFive">
-            <div class="card-block">
-              <p>
-                Yes, you can. However, be considerate when, how and what you download. Use of the AlwaysOn WiFi in breach of the <a href="/terms">Terms of Use</a> will mean a temporal or permanent ban from the WiFi Service.
-              </p>
-              <p>
-                In order to ensure a fast reliable connection for all users, we recommend you do heavy downloads (200Mb or more file sizes) during the night, as less users are on the network, and the download will be relatively faster.
-              </p>
-              <p>
-                For very big file sizes, we encourage you to contact AlwaysOn WiFi Administrators, and we'll be happy to do an off-the-WiFi download for you for free, after considering your request, content to download, and if such content meets our ToS.
-              </p>
-            </div>
-          </div>
-        </div>         
-        <div class="card">
-          <div class="card-header" role="tab" id="headingsix">
-            <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#browser-support" aria-expanded="false" aria-controls="browser-support">
-          Can't open Login Page. Is it the browser?
-        </a>
-      </h5>
-          </div>
-          <div id="browser-support" class="collapse show" role="tabpanel" aria-labelledby="headingsix">
-            <div class="card-block">
-              <p>
-                One of the common issues faced by new users is the inability to open the AlwaysOn WiFi login page to enter the voucher code.
-              </p>
-              <p>
-                Here are steps we suggest to fix it, and they do not follow in any particular order:
-                <ul>
-                  <li>Upgrade your operating system</li>
-                  <li>Use either Firefox, Chrome, Opera or UC Browser</li>
-                  <li>Update your Firefox, Chrome, Opera or UC Browser to a recent version</li>
-                </ul>
-              </p>
-              <p>
-                NOTE: The AlwaysOn WiFi Login Page <bold>does not work</bold> on the Internet Explorer browser. We highly recommend any of the steps above.
-              </p>
-            </div>
-          </div>
-        </div> 
-        <div class="card">
-          <div class="card-header" role="tab" id="headingseven">
-            <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#browsing-speed" aria-expanded="false" aria-controls="browsing-speed">
-          When can I get fastest browsing speeds? 
-        </a>
-      </h5>
-          </div>
-          <div id="browsing-speed" class="collapse show" role="tabpanel" aria-labelledby="headingseven">
-            <div class="card-block">
-              <p>
-                Off-peak times are the best times to get the fastest speeds. During peak hours such as from late evening to early night, more users are on the WiFi and the internet service provider at large, thus the internet speeds might degrade.
-              </p>
-              <p>
-                To enjoy relatively faster browsing speeds, try using AlwaysOn WiFi at the suggested times below:
-                <ul>
-                  <li>Weekdays: 11 pm to 10 am</li>
-                  <li>Weekends: During the day, internet speeds tend to be fast, compared to the mornings and evenings.</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-        </div>    
-
-        <div class="card">
-          <div class="card-header" role="tab" id="headingeight">
-            <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#youtube-videos" aria-expanded="false" aria-controls="youtube-videos">
-          My YouTube videos keep loading. Why?
-        </a>
-      </h5>
-          </div>
-          <div id="youtube-videos" class="collapse show" role="tabpanel" aria-labelledby="headingeight">
-            <div class="card-block">
-              <p>
-                YouTube videos support from 144p video quality up to 8K. When you select a specific video quality, YouTube tries to stick to it for all your videos. However, the higher the video quality, the more likely it might be the network speed cannot stream such a quality at that point in time.
-              </p>
-              <p>
-                Therefore, we strongly recommend to set your YouTube player to automatically detect your network and stream the related video quality for you. As the video starts playing, even if in low quality, YouTube will automatically adjust to higher quality during the video.
-              </p>
-              <p>
-                To set your YouTube video to "Auto", please follow this tutorial on <a href="https://support.google.com/youtube/answer/91449?hl=en" target="new">YouTube Support</a>
-              </p>
-            </div>
-          </div>
-        </div>    
-
-        <div class="card">
-          <div class="card-header" role="tab" id="headingnine">
-            <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#health" aria-expanded="false" aria-controls="health">
-          What are the Health Risk of WiFi?
-        </a>
-      </h5>
-          </div>
-          <div id="health" class="collapse show" role="tabpanel" aria-labelledby="headingnine">
-            <div class="card-block">
-              <p>
-                There is none! No research into the effects of WiFi have proven WiFi poses any harmful risk to our health.
-              </p>
-              <p>
-                Read more about the subject in this article, <a href="https://www.theguardian.com/technology/askjack/2012/sep/27/wi-fi-health-risks" target="new">Wi-Fi: are there any health risks?"</a>
-              </p>
-            </div>
-          </div>
-        </div> 
-
-      </div>
-    </div>
-  </div>
+</div>
+</div>
 {% endblock %}
