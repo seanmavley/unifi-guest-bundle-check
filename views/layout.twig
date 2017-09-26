@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../assets/favicon.ico">
+    <link rel="icon" href="../assets/favico.png">
     <title>{% block title %} Title {% endblock %} - Enjoy WiFi, Today!</title>
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="../assets/carousel.css" rel="stylesheet">
 </head>
@@ -23,33 +24,48 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#how-to-connect">How to Connect</a>
+                    </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/#how-to-connect">How to Connect <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/support">Support</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link" href="/packages">Packages <span class="sr-only">(current)</span></a>
+                    </li>                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Solutions
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="solutionsDropDown">
+                            <a class="dropdown-item" href="/for-home">For Homes</a>
+                            <a class="dropdown-item" href="/for-business">For Businesses</a>
+                        </div>
+                    </li>                  
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          More
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/coverage">Coverage</a>
+                            <a class="dropdown-item" href="/support">Support</a>
+                            <a class="dropdown-item" href="/faq">FAQs</a>
+                            <a class="dropdown-item" href="/terms">Terms</a>
+                        </div>
                     </li>
                 </ul>
                 <div class="mt-2 mt-md-0">
-                    <a href="#" class="btn btn-warning my-2 my-sm-0 text-white">Check Balance</a>
+                    <a href="/check-voucher" class="btn btn-secondary my-2 my-sm-0 text-white">Check Balance</a>
+                    <a href="https://buy.enjoywifi.today" target="blank" class="btn btn-warning my-2 my-sm-0 text-white">Buy Voucher</a>
                 </div>
             </div>
         </nav>
     </header>
     <main role="main">
-      {% block slider %}
-      {% endblock %}
-
-      {% block content %}
-      {% endblock %}
+        {% block slider %} {% endblock %} {% block content %} {% endblock %}
         <!-- /.container -->
         <!-- FOOTER -->
+    <hr class="featurette-divider">
         <footer class="container">
             <p class="float-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            <p>&copy; 2017 KhoPhi Communications LLC. &middot; <a href="/terms">Privacy</a> &middot; <a href="/terms">Terms</a> &middot; <a href="/about">About AlwaysOn WiFi</a></p>
         </footer>
     </main>
     <!-- Bootstrap core JavaScript

@@ -17,6 +17,22 @@ router.get('/terms', function(req, res, next) {
   res.render('terms', {});
 })
 
+router.get('/for-home', function(req, res, next) {
+  res.render('home', {});
+})
+
+router.get('/about', function(req, res, next) {
+  res.render('about', {});
+})
+
+router.get('/for-business', function(req, res, next) {
+  res.render('business', {});
+})
+
+router.get('/packages', function(req, res, next) {
+  res.render('packages', {});
+})
+
 router.get('/faq', function(req, res, next) {
   res.render('faq', {});
 })

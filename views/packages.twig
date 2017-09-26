@@ -1,0 +1,62 @@
+{% extends 'layout.twig' %} {% block title %} AlwaysOn Packages {% endblock %} {% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 mx-auto">
+            <h3>
+              Available Packages for Home & WiFi Zones
+            </h3>
+            <hr class="my-4">
+            <table class="table table-striped table-hover">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Bundle Name</th>
+                        <th>Duration (Days)</th>
+                        <th>Data Cap (Gig)</th>
+                        <th>Price (Cedis)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Mini Heavy</th>
+                        <td>3</td>
+                        <td>0.3 (300 Mb)</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Monthly Lite</th>
+                        <td>30</td>
+                        <td>1</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Monthly Heavy</th>
+                        <td>30</td>
+                        <td>3</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Monthly Xtreme</th>
+                        <td>30</td>
+                        <td>10</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Custom Monthly Bundle</th>
+                        <td><a href="/support">Contact Alwayson</a></td>
+                        <td colspan="2">+233.26.920.1707 or alwayson@khophi.co</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+      <div class="col text-center">
+        <h2>For Businesses</h2>
+        <p class="lead">
+          We have special packages tailored for businesses. See our Business packages to learn more.
+        </p>
+        <a href="/for-business" class="btn btn-primary">For Businesses</a>
+      </div>
+    </div>
+    {% endblock %}
