@@ -1,22 +1,78 @@
-{% extends 'layout.twig' %}
-{% block title %} Help & Support {% endblock %}
-{% block content %}
+{% extends 'layout.twig' %} {% block title %} Help & Support {% endblock %}
+{% block extra_head %}
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}
+ {% block content %}
 <div class="container mt-5">
     <div class="row">
-      <div class="col-sm-12 col-md-6">
-        <p class="display-3">Support</p>
-        <p class="lead">
-          Need assistance with using AlwaysOn WiFi? <br/> Send a message to <a href="mailto:alwayson@khophi.co">alwayson [ at ] khophi.co</a> for support, and we'll be happy to answer your questions.
-        </p>
-      </div>
-      <div class="col-sm-12 col-md-6">
-        <p class="display-3">Contact</p>
-        <p class="lead">
-          Contact AlwaysOn WiFi on <br>
-          phone: +233.26.920.1707 <br/>
-          email: <a href="mailto:alwayson@khophi.co">alwayson [ at ] khophi.co</a>.
+        <div class="col-sm-12 col-md-6">
+            <p class="display-3">Support</p>
+            <p class="lead">
+                Need assistance with using AlwaysOn WiFi?
+                <br/> Send a message to <a href="mailto:alwayson@khophi.co">alwayson [ at ] khophi.co</a> for support, and we'll be happy to answer your questions.
+            </p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <p class="display-3">Contact</p>
+            <p class="lead">
+                Contact AlwaysOn WiFi on
+                <br> phone: +233.26.920.1707
+                <br/> email: <a href="mailto:alwayson@khophi.co">alwayson [ at ] khophi.co</a>.
+            </p>
+        </div>
+    </div>
+    <hr class="my-4">
+    {% if error %}
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <p class="text-danger text-center lead">
+          {{ msg }}
         </p>
       </div>
     </div>
-  </div>
+    {% endif %}    
+
+    {% if state %}
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <p class="text-success text-center lead">
+          {{ msg }}
+        </p>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if not state %}
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+        <h3 class="text-center">Get in touch with us below.</h3>
+        <p class="lead text-center">All fields are required.</p>
+            <form method="POST" action="/support">
+                <div class="form-group">
+                    <label for="name" class="form-control-label">Your Name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter name" required>
+                </div>                 
+                <div class="form-group">
+                    <label for="subject" class="form-control-label">Topic</label>
+                    <input type="text" class="form-control" name="subject" id="subject" aria-describedby="topicHelp" placeholder="Enter subject" required>
+                    <small id="topicHelp" class="form-text text-muted">Your message subject</small>
+                </div>                
+                <div class="form-group">
+                    <label for="email" class="form-control-label">Your Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-control-label">Message</label>
+                    <textarea rows="4" class="form-control" name="message" id="message" required=""></textarea>
+                </div>
+                <div class="form-group"
+                  {{ captcha }}
+                </div>
+                <button type="submit" role="button" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+</div>
 {% endblock %}
