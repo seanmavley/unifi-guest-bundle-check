@@ -5,8 +5,6 @@ let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
-let sitemap = require('express-sitemap')();
-
 let index = require('./routes/index');
 
 let app = express();
@@ -42,7 +40,5 @@ app.use(function(err, req, res, next) {
   res.json(err.status || 500);
   // res.render('error');
 });
-
-sitemap.generate(app);
 
 module.exports = app;

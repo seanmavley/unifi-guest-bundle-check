@@ -1,11 +1,11 @@
-var express = require('express');
-var unifi = require('node-unifiapi');
-var router = express.Router();
-var recaptcha = require('express-recaptcha');
+let express = require('express');
+let unifi = require('node-unifiapi');
+let router = express.Router();
+let Recaptcha = require('express-recaptcha');
 
-var credentials = require('../credentials');
+let credentials = require('../credentials');
 
-recaptcha.init(credentials.sitekey, credentials.sitesecret);
+let recaptcha = new Recaptcha(credentials.sitekey, credentials.sitesecret);
 
 // Homepage
 router.get('/', function(req, res, next) {
@@ -72,8 +72,8 @@ function calculate_usage(result) {
   console.log(result.rx_bytes);
   console.log(result.tx_bytes);
   console.log(result.qos_usage_quota);
-  var total_used = (result.rx_bytes + result.tx_bytes) / 1000000;
-  var total_left = result.qos_usage_quota - total_used;
+  let total_used = (result.rx_bytes + result.tx_bytes) / 1000000;
+  let total_left = result.qos_usage_quota - total_used;
 
   return {
     'quota': result.qos_usage_quota,
@@ -85,7 +85,7 @@ function calculate_usage(result) {
 
 router.post('/check-voucher', function(req, res, next) {
   // Check the credentials_sample
-  var u = unifi({
+  let u = unifi({
     baseUrl: credentials.baseUrl, // The URL of the Unifi Controller
     username: credentials.username, // Your username
     password: credentials.password, // Your password
@@ -95,20 +95,20 @@ router.post('/check-voucher', function(req, res, next) {
   recaptcha.verify(req, function(error) {
     if (!error) {
       u.list_guests()
-        .then((data) => {
+        .then((unifi_response) => {
           // remove the hyphen if any
-          var voucher = req.body.voucher_code.replace(/-/g, "");
+          let voucher = req.body.voucher_code.replace(/-/g, "");
           // console.log(data.data.find(x => x.voucher_code === req.body.voucher));
-          var result = data.data.find(x => x.voucher_code === voucher);
+          let result = unifi_response.data.find(x => x.voucher_code === voucher);
 
-          var data = calculate_usage(result);
+          let calculations = calculate_usage(result);
 
           res.render('checkvoucher', {
             'result': true,
             'voucher_code': req.body.voucher_code,
-            'quota': data.quota,
-            'total_used': data.total_used,
-            'total_left': data.total_left
+            'quota': calculations.quota,
+            'total_used': calculations.total_used,
+            'total_left': calculations.total_left
           })
         })
         .catch(err => {

@@ -10,7 +10,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "express": "~4.15.2",
-    "express-recaptcha": "^2.1.0",
+    "express-recaptcha": "^3.0.0",
     "express-sitemap": "^1.8.0",
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.2.1",
