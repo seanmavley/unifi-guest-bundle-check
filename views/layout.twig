@@ -4,17 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="https://khophi.co">
+    <meta name="google-site-verification" content="ljW21IHygFrMmnj9MRdzQIe_cxaYZir5SOwcueD3FjI" />
+    <meta name="description" content="AlwaysOn WiFi - Enjoy WiFi, Today!">
+    <meta property="og:description" content="AlwaysOn WiFi - Enjoy WiFi, Today!">
+    <meta property="og:site_name" content="Enjoy WiFi Today">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="AlwaysOn WiFi - Enjoy WiFi, Today!">
     <link rel="icon" href="../public/assets/favico.png">
     <title>{% block title %} Title {% endblock %} - Enjoy WiFi, Today!</title>
     <!-- Bootstrap core CSS -->
     <link href="../public/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../public/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="../public/assets/style.css" rel="stylesheet">
-    {% block extra_head %}
-    {% endblock %}
+    <link href="../public/assets/style.css" rel="stylesheet"> {% block extra_head %} {% endblock %}
 </head>
 
 <body>
@@ -31,7 +33,7 @@
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/packages">Packages <span class="sr-only">(current)</span></a>
-                    </li>                    
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="solutionsDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Solutions
@@ -41,7 +43,7 @@
                             <a class="dropdown-item" href="/for-business">For Businesses</a>
                             <a class="dropdown-item" href="/support">Tailored Help</a>
                         </div>
-                    </li>                  
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           More
@@ -64,7 +66,7 @@
     <main role="main">
         {% block slider %} {% endblock %} {% block content %} {% endblock %}
         <!-- FOOTER -->
-    <hr class="featurette-divider">
+        <hr class="featurette-divider">
         <footer class="container">
             <p class="float-right"><a href="#">Back to top</a></p>
             <p>&copy; 2017 KhoPhi Communications LLC. &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a> &middot; <a href="/about">About AlwaysOn WiFi</a></p>
@@ -82,13 +84,13 @@
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107235247-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments)};
-      gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'UA-107235247-1');
+    function gtag() { dataLayer.push(arguments) };
+    gtag('js', new Date());
+
+    gtag('config', 'UA-107235247-1');
     </script>
-
 </body>
 
 </html>
