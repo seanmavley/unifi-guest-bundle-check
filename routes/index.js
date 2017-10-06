@@ -24,6 +24,10 @@ router.get('/for-home', function(req, res) {
     res.render('home', {});
 })
 
+router.get('/for-neighborhood', function(req, res) {
+    res.render('neighborhood', {});
+})
+
 router.get('/about', function(req, res) {
     res.render('about', {});
 })
