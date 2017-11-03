@@ -53,10 +53,10 @@ router.get('/support', function(req, res) {
 
 router.post('/support', function(req, res) {
     if (!(req.body.email || req.body.message)) {
-      return res.render('support', {
-        'error': true,
-        'msg': 'Please complete the form'
-      })
+        return res.render('support', {
+            'error': true,
+            'msg': 'Please complete the form'
+        })
     };
 
     recaptcha.verify(req, function(error) {
@@ -70,17 +70,17 @@ router.post('/support', function(req, res) {
 
             smtpTransport.sendMail(mailOptions, function(error, response) {
                 if (error) {
-                  console.log(error);
+                    console.log(error);
                 } else {
-                  console.log(response);
+                    console.log(response);
                 }
             });
 
             // send response ahead of time
             // trusting email will send.
             res.render('support', {
-              'state': true,
-              'msg': 'Message successfully sent. We will get in touch as soon as possible.'
+                'state': true,
+                'msg': 'Message successfully sent. We will get in touch as soon as possible.'
             })
 
         } else {
