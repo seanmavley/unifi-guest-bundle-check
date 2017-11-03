@@ -28,6 +28,8 @@ app.use('/', index);
 app.get('/sitemap.xml', function(req, res) {
 
     let sitemap = map({
+        http: 'https',
+        url: 'enjoywifi.today',
         route: {
             'ALL': {
                 lastmod: '2017-11-02',
