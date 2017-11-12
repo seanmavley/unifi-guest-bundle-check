@@ -2,9 +2,11 @@
 
 Allow users of your Unifi hotspot with vouchers check how much data they have left.
 
+This is a stripped down version of the entire 
+
 ## What
 
-A way for my Unifi WiFi Hotspot users to check the balance left on their voucher quota themselves. I'm tired of doing the maths for them every second.
+A way for my Unifi WiFi Hotspot users to check the data left on their voucher quota themselves. I'm tired of doing the maths for them every now and then.
 
 Here's how it looks in the browser:
 
@@ -16,15 +18,13 @@ Voucher Check Form
 
 ## Why
 
-Ever since I started running a small neighborhood WiFi hotspot thing, the most requested feature is the ability for the users to check how much data they have left per their voucher.
+Users of our wifi network needed a way to check the validity, data remaining and expiry of their vouchers on their own. Worked on this project to get that done.
 
-Unifi happily doesn't have that feature in-built to the Unifi Controller. As to why not, is a 2,392 paged-book on its own. We'll skip that for now.
-
-Since I couldn't be the one to always update users of the WiFi all the time with how much data they have left (which I think they have the right to know), I had to get out of the picture, and let the Users do it themselves.
+Not interested in customers knocking my door at 2 am just to ask how much data left in their 100mb package.
 
 ## How
 
-The Unifi Controller comes with an API. Delian, beautifully also has this project https://github.com/delian/node-unifiapi which is node-based and exposes the Unifi API for consumption.
+The Unifi Controller comes with an API. Delian, beautifully also has this project https://github.com/delian/node-unifiapi which is node-based and exposes an API for consuming Unifi Controller's API.
 
 I just query for a list of guests, the return the object with a matching voucher as the requested.
 
@@ -42,3 +42,8 @@ This project was built with Node 7+ in mind, so make sure you have Node installe
 The `/` (homepage) of the project above is simply something particular for the WiFi hotspot I run. Just change the routes to match whatever you want.
 
 Check [Unifi articles on Khophi's Dev Blog](https://blog.khophi.co/tag/unifi) to read an article about this project.
+
+
+# License
+
+MIT
