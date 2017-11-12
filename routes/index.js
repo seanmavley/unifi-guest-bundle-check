@@ -108,7 +108,7 @@ router.get('/check-voucher', function(req, res) {
     })
 });
 
-function calculate_usage(result) {
+function calculate_usage(result, voucher_code) {
 
     //   Calculates the amount of data used and left as per voucher.
 
@@ -121,11 +121,17 @@ function calculate_usage(result) {
     // console.log(result.qos_usage_quota);
     let total_used = (result.rx_bytes + result.tx_bytes) / 1000000;
     let total_left = result.qos_usage_quota - total_used;
+    let expiry_date = new Date(result.end * 1000);
+    let activated_on = new Date(result.start * 1000);
 
     return {
+        'result': true,
+        'voucher_code': voucher_code,
         'quota': result.qos_usage_quota,
         'total_used': total_used,
-        'total_left': total_left
+        'total_left': total_left,
+        'activated_on': activated_on,
+        'expiry_date': expiry_date,
     }
 }
 
@@ -145,18 +151,12 @@ router.post('/check-voucher', function(req, res) {
                 .then((unifi_response) => {
                     // remove the hyphen if any
                     let voucher = req.body.voucher_code.replace(/-/g, "");
-                    // console.log(data.data.find(x => x.voucher_code === req.body.voucher));
+                    // console.log(unifi_response.data.find(x => x.voucher_code === req.body.voucher));
                     let result = unifi_response.data.find(x => x.voucher_code === voucher);
 
-                    let calculations = calculate_usage(result);
+                    let calculations = calculate_usage(result, req.body.voucher_code);
 
-                    res.render('checkvoucher', {
-                        'result': true,
-                        'voucher_code': req.body.voucher_code,
-                        'quota': calculations.quota,
-                        'total_used': calculations.total_used,
-                        'total_left': calculations.total_left
-                    })
+                    res.render('checkvoucher', calculations)
                 })
                 .catch(err => {
                     console.log('Error', err)
