@@ -4,7 +4,7 @@
   <script src='https://www.google.com/recaptcha/api.js'></script>
 {% endblock %}
 {% block content %}
-  <div class="container mt-4">
+  <div class="container mt-5">
     <div class="row">
       <div class="col-sm-12 col-md-3">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -14,13 +14,9 @@
           (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
       </div>
-      <div class="col-sm-12 col-md-5">
+      <div class="col-sm-12 col-md-6">
         <h3>Check your AlwaysOn Bundle</h3>
         <hr class="my-4">
-        <!--<h3>Sorry, Check data bundle service not working at the moment.</h3>
-        <p>
-          We working on it.
-        </p> -->
         {% if not result %}
         <form method="POST" action="/check-voucher">
           <div class="form-group">
@@ -47,6 +43,9 @@
           <p>Total Bundle: <strong>{{ quota }} Megabytes</strong> (or {{ quota / 1000|round(2) }} Gb)</p>
           <p>Total Used: <strong>{{ total_used|round(2) }} Megabytes</strong></p>
           <p>Total Left: <strong>{{ total_left|round(2) }} Megabytes</strong></p>
+          <hr>
+          <p>Activated On: <strong>{{ activated_on | date }}</strong></p>
+          <p>Expires(d) On: <strong>{{ expiry_date | date }}</strong></p>
         </div>
         {% endif %}
         {% if error %}
