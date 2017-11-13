@@ -1,11 +1,11 @@
 var express = require('express');
 var unifi = require('node-unifiapi');
 var router = express.Router();
-var recaptcha = require('express-recaptcha');
+var Recaptcha = require('express-recaptcha');
 
 var credentials = require('../credentials');
 
-recaptcha.init(credentials.sitekey, credentials.sitesecret);
+let recaptcha = new Recaptcha(credentials.sitekey, credentials.sitesecret);
 
 // Homepage
 router.get('/', function(req, res, next) {
