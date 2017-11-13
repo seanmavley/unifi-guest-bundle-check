@@ -42,8 +42,3 @@ This project was built with Node 7+ in mind, so make sure you have Node installe
 The `/` (homepage) of the project above is simply something particular for the WiFi hotspot I run. Just change the routes to match whatever you want.
 
 Check [Unifi articles on Khophi's Dev Blog](https://blog.khophi.co/tag/unifi) to read an article about this project.
-
-
-# License
-
-MIT
